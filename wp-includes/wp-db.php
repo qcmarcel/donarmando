@@ -1632,7 +1632,11 @@ class wpdb {
 			}
 
 			if ( WP_DEBUG ) {
-				mysqli_real_connect( $this->dbh, $host, $this->dbuser, $this->dbpassword, null, $port, $socket, $client_flags );
+				try{
+					mysqli_real_connect( $this->dbh, $host, $this->dbuser, $this->dbpassword, null, $port, $socket, $client_flags );
+				}catch(Exception $e){
+					error_log('error mysql connect: '.$e->getMessage());
+				}
 			} else {
 				// phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
 				@mysqli_real_connect( $this->dbh, $host, $this->dbuser, $this->dbpassword, null, $port, $socket, $client_flags );
