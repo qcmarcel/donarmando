@@ -1613,7 +1613,7 @@ class wpdb {
 			$this->dbh = mysqli_init();
 
 			$host    = $this->dbhost;
-			$port    = defined('DB_PORT') ? DB_PORT : null;
+			$port    = null;
 			$socket  = null;
 			$is_ipv6 = false;
 
@@ -1743,7 +1743,7 @@ class wpdb {
 	 *                     False if $host couldn't be parsed.
 	 */
 	public function parse_db_host( $host ) {
-		$port    = null;
+		$port    = defined('DB_PORT') ? DB_PORT :null;
 		$socket  = null;
 		$is_ipv6 = false;
 
