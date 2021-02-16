@@ -1631,7 +1631,7 @@ class wpdb {
 				$host = "[$host]";
 			}
 
-			echo  "mysqli connect: $host, $this->dbuser, $this->dbpassword, $port, ".json_encode($socket) ." ,".json_encode($client_flags);
+			echo  "mysqli connect: $host, $this->dbuser, $this->dbpassword, $port, ".json_encode($socket) ." ,".json_encode($client_flags);exit();
 			if ( WP_DEBUG ) {
 				try{
 					mysqli_real_connect( $this->dbh, $host, $this->dbuser, $this->dbpassword, null, $port, $socket, $client_flags );
