@@ -36,6 +36,8 @@ define( 'DB_CHARSET', 'utf8mb4' );
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
+/** @qcmarcel : for heroku & aws rds */
+define('DB_PORT',3306);
 
 /**#@+
  * Authentication Unique Keys and Salts.
